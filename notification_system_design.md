@@ -31,3 +31,18 @@ System sends notifications when events occur.
 
 Time Complexity:
 - O(n log n)
+
+## Future Improvements
+
+- Replace in-memory storage with database
+- Add authentication middleware
+- Use Redis for caching frequent queries
+- Implement async processing using Kafka
+- Add pagination & rate limiting
+
+## Assumptions
+
+- Notifications are read-heavy operations
+- Priority is determined by type + recency
+- System should scale horizontally
+- Data consistency is eventual, not strict

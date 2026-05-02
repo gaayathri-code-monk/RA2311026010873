@@ -4,6 +4,9 @@ const app = express();
 const vehicleRoutes = require('./routes/vehicleRoutes');
 
 app.use(express.json());
+app.get("/health", (req, res) => {
+  res.json({ status: "OK", service: "vehicle-maintenance-api" });
+});
 app.use('/api', vehicleRoutes);
 
 app.get('/test', (_req, res) => {

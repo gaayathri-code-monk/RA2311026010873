@@ -17,11 +17,19 @@ async function addVehicle(req, res) {
 }
 
 async function getVehicles(req, res) {
-  await Log("backend", "info", "controller", "Filtering vehicles");
-
   try {
+    await Log("backend",
+       "info", 
+       "controller",
+        `Request received at ${new Date().toISOString()}`
+      );
+
     const result = vehicleService.getVehicles(req.query);
-    res.json(result);
+    res.json({
+  success: true,
+  data: result,
+  message: "Vehicles fetched successfully"
+});
   } catch (err) {
     await Log("backend", "error", "controller", err.message);
     res.status(500).json({ error: "Error fetching vehicles" });
