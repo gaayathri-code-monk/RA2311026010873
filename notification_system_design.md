@@ -21,3 +21,13 @@ System sends notifications when events occur.
 ## Failure Handling
 - Retry failed notifications
 - Log all failures
+
+## Implementation
+
+- Used weighted priority scoring
+- Priority = Type Weight + Recency
+- Sorted using custom comparator
+- Extracted Top 10 notifications
+
+Time Complexity:
+- O(n log n)
